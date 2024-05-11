@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Everyday Git</title>
+    <link rel="icon" href="/assets/git.png">
+  </head>
+  <body>
+    <h1>The Easiest Way To Understand Git</h1>
+    <p>Git is a popular software among the developer community. It enables them to manage and track code changes as well as reverting to various code status. It also helps simultaneous team collaboration on projects. In this short blog, you will learn the basics of <em>Git</em></p>
+    <h2>What is Git?</h2>
+    <p>
+      <strong>Git</strong> is a version control system that is used to manage
+      and keep track of files and code changes over time.
+    </p>
+    <p>
+      A version control system is a software that is used to manage changes to
+      files over time, keep track of every modifications made, enabling users to
+      go back to various states of their files.
+    </p>
+    <p>
+      There are several version control systems currently used in the world,
+      they include but not limited to Mercurial, Azure DevOps, GNU Bazaar, and
+      Git.
+    </p>
+    <p>
+      In this blog, we will learn how to setup and use Git, one of the most used
+      version control systems today.
+    </p>
+    <h2>Installing Git</h2>
+    <p>
+      After having an understanding of what Git is, lets go through the steps to
+      having it installed in you machine.
+    </p>
+    <ol>
+      <b><li>Confirm whether Git is already installed in your coputer.</li></b>
+      <p>
+        Some operating systems come with Git installed, so it's best to always
+        confirm before installing. To confirm, run this command on your
+        terminal:
+      </p>
+      <code>git --version</code>
+      <figure>
+        <img src="/assets/noGit.png" alt="A screenshot of confirming if git is installed" />
+        <figcaption>Confirming whether Git is already installed</figcaption>
+      </figure>
+      <p>
+        If the output is a Git version such as <code>git version 2.34.1</code>,
+        it means that Git is already installed, otherwise head on to the next
+        step.
+      </p>
+
+      <b><li>Download Git for the main website.</li></b>
+      <p>
+        To install Git, head on to the
+        <a href="https://git-scm.com/downloads" target="_blank">git download webpage:</a>
+      </p>
+      <figure>
+        <img src="/assets/gitweb.png" alt="A screenshot of the git download website"  width="600">
+        <figcaption>Choose the operating system to download.</figcaption>
+      </figure>
+      <p>
+        Choose your operating system and follow the downloading steps.
+        <i
+          >Note: the downloading procedures differ across various operating
+          systems.</i
+        >
+      </p>
+      <b><li>Confirm the installation.</li></b>
+      <p>
+        To confirm whether the installation was successful, run this command on
+        the terminal:
+      </p>
+      <code>git --version</code>
+      <p>
+        The expected output, is the version of git installed e.g
+        <code>git version 2.34.1</code>.
+      </p>
+      <figure>
+        <img src="/assets/version.png" alt="A screenshot of successful git installation" />
+        <figcaption>Expected output</figcaption>
+      </figure>
+      <p>
+        If there are any problems, refer to the git
+        <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+           target="_blank">main website</a
+        >
+      </p>
+    </ol>
+    <h2>Configuring Git</h2>
+    <p>
+      Now that you have Git installed, you should let Git know who you are by
+      configuring your name and the email address.
+    </p>
+    <p>To add your name, run the following command on the terminal:</p>
+    <code>git config --global user.name "Your Name"</code>
+    <figure>
+      <img src="/assets/configName.png" alt="A screenshot of configurin Git name" />
+      <figcaption>Configure your name</figcaption>
+    </figure>
+    <p>To add your email address, run the following command on the terminal:</p>
+    <code>git config --global user.email "Your Email Address"</code>
+    <figure>
+      <img src="/assets/configEmail.png" alt="A screenshot of configurin Git email address" />
+      <figcaption>Configure your email address</figcaption>
+    </figure>
+    <h2>Working with Git Repositories</h2>
+    <p>
+      A Git <strong>repository</strong> is a storage location where all changes
+      will be managed and tracked.
+    </p>
+    <h3>Initilizing a repository</h3>
+    <p>
+      To initialize a Git repository, you should first Create a new folder for
+      the project on your Desktop, (You can use any directory of your choice),
+      by using the following command on the terminal:
+    </p>
+    <code>mkdir "Project Name" ; cd "Project </code>
+
+    <figure>
+      <img src="/assets/creatingFolder.png" alt="A screenshort of folder creation" />
+      <figcaption>Create a folder and get into the folder</figcaption>
+    </figure>
+
+    <p>The initialize Git by running the command:</p>
+    <code>git init</code>
+    <figure>
+      <img src="/assets/initializingGit.png" alt="A screenshot of initializing git" />
+      <figcaption>Initializing Git</figcaption>
+    </figure>
+    <h3>Adding files to the staging area</h3>
+    <p>
+      After making changes to your new project, use the following command to
+      check the status of your created files:
+    </p>
+    <code>git status</code>
+    <figure>
+      <img src="/assets/status.png" alt="A screenshot of checking file status" />
+      <figcaption>Checking the file status in Git.</figcaption>
+    </figure>
+    <p>
+      When a file is <strong>Untracked</strong> it means that Git knows about
+      the file but it has not been added to the repository, while when a file is
+      <strong>Tracked</strong> it means that it has been added to the git
+      repository
+    </p>
+    <p>For a file to be tracked, it has to be added to the staging area.</p>
+    <p>
+      A <strong>staging area </strong>is basically a space where chages to a
+      file are prepared before they are commited to a repository.
+    </p>
+    <p>
+      To add a file to the staging area use the following git command on the
+      terminal:
+    </p>
+    <code>git add "filename"</code>
+    <p>To add all the files, use the command:</p>
+    <p><code>git add .</code> Or <code>git add all</code></p>
+    <figure>
+      <img src="/assets/add.png" alt="A screenshort of adding a file to the staging area" />
+      <figcaption>Adding a file to the staging area</figcaption>
+    </figure>
+    <h3>Commiting changes</h3>
+    <p>
+      A <strong>commit</strong> is basically a chunk of changes made to a
+      repository at a particular point in time.
+    </p>
+    <p>To commit changes, use the following command on the terminal:</p>
+    <code>git commit -m "Commit Message"</code>
+    <figure>
+      <img src="/assets/commit.png" alt="A screenshot of commiting changes" />
+      <figcaption>Making a commit</figcaption>
+    </figure>
+    <p>
+      The commit message should always be descriptive, explaining what the
+      commit will do. A good practice is to ask yourself the question,"This
+      commit will?" For example, "This commit will
+      <em>intialize the project</em>," initialize the project will be the commit
+      message.
+    </p>
+    <p>
+      To show a list all commits made, use the following command on the
+      terminal:
+    </p>
+    <code>git log --oneline</code>
+    <figure>
+      <img src="/assets/viewCommits.png" alt="A screenshot listing all commits" />
+      <figcaption>Getting a list of all commits</figcaption>
+    </figure>
+    <p>
+      To go back to a particular commit, use the following command on the
+      terminal:
+    </p>
+    <code>git checkout "commit code"</code>
+    <figure>
+      <img src="/assets/revertCommit.png" alt="A screenshot of reverting commit changes" />
+      <figcaption>Reverting commit changes</figcaption>
+    </figure>
+    <h2>Branches</h2>
+    <p>
+      A <strong>branch</strong> in Git is a separate copy of the main repository
+      used to allow multiple users to work simultaneously on the same project
+      without interfering with each other's woek.
+    </p>
+    <h3>Creating a branch</h3>
+    <p>To create a branch, use the following command on the terminal:</p>
+    <code>git branch "branch name"</code>
+    <figure>
+      <img src="/assets/createBranch.png" alt="A screenshot creating a branch" />
+      <figcaption>creating a branch.</figcaption>
+    </figure>
+
+    <h3>Viewing all branches</h3>
+    <p>
+      To view the branch present in a repository, use the following command on
+      the terminal:
+    </p>
+    <code>git branch</code>
+    <figure>
+      <img src="/assets/viewBranches.png" alt="A screenshot for viewing branches" />
+      <figcaption>Viewing all branches in a repository.</figcaption>
+    </figure>
+    <p><em>The branch with an asteric prefixed, is the active branch</em></p>
+    <h3>Switching active branches</h3>
+    <p>
+      To change branches, or rather to switch to a different branch, use the
+      following command on the termina:
+    </p>
+    <code>git checkout "branch name"</code>
+    <figure>
+      <img src="/assets/branchSwitchinh.png" alt="A screenshot for switching branches" />
+      <figcaption>Switching between branches.</figcaption>
+    </figure>
+    <p>
+      <i>The branch name, is the name of the branch you want to switch to.</i>
+    </p>
+    <h3>Merging a branch</h3>
+    <p>
+      To merge a branch is to add changes from one branch branch to another,
+      mostly to the ain branch.
+    </p>
+    <p>
+      To merge changes, switch to that branch and use the following command on
+      the terminal.
+    </p>
+    <code>git merge "branch name"</code>
+    <figure>
+      <img src="/assets/mergeBranch.png" alt="A screenshot for merging branches" />
+      <figcaption>Merging branches in a repository.</figcaption>
+    </figure>
+    <p>
+      <i
+        >The branch name, is the name of the branch from which changes as
+        merged.</i
+      >
+    </p>
+    <h3>Deleting a branch</h3>
+    <p>To delete a branch, use the following command on the terminal:</p>
+    <code>git branch -d "branch name"</code>
+    <figure>
+      <img src="/assets/deleteBranch.png" alt="A screenshot for deleting abranch" />
+      <figcaption>Deleting a branch.</figcaption>
+    </figure>
+    <h2>Additional git commands</h2>
+    <ul>
+        <li><p><code>git branch -M "newBranchName"</code> for renaming a branch</p></li>
+        <li><p><code>git log</code> for listing all the commits in  details</p></li>
+        <li><p><code>git switch "branchName"</code> for switching between branches</p></li>
+    </ul>
+    <h2>Conclusion</h2>
+    <p>
+      Very well! You have covered the basics of Git and its commands. You can
+      extend your version control skills by learning <a href="#">advanced Git</a> feature and
+      <a href="#">GitHub</a>.
+    </p>
+  </body>
+</html>
